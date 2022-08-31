@@ -1,6 +1,8 @@
 import Footer from "./components/Footer/Footer"
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
+import { ImgContextProvider } from "./context/imgContext";
+import { TextContextProvider } from "./context/textContext";
 
 const wrapper = {
   display: 'flex',
@@ -11,11 +13,13 @@ const wrapper = {
 const App = () => {
   return (
     <div style={wrapper}>
-      <Header />
-
-      <Main />
-
-      <Footer />
+      <ImgContextProvider>
+        <TextContextProvider>
+          <Header />
+          <Main />
+          <Footer />
+        </TextContextProvider>
+      </ImgContextProvider>
     </div>
   );
 }

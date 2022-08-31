@@ -1,14 +1,15 @@
 import Container from "../Container/Container";
 import Felicitation from "./Сongratulation/Felicitation";
-import Image from "./Сongratulation/Image";
+import ImageCard from "./Сongratulation/ImageCard";
 import style from "./Main.module.css";
+import CardBG from "../../img/card-bg.jpg"
 
 const Main = () => (
     <Container>
       <div className={style.card}>
         <div className={style.wrapper}>
           <div className={style.image}>
-            <Image />
+            <ImageCard img={CardBG}/>
             <Felicitation />
           </div>
         </div>
