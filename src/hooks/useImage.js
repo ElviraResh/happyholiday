@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { URI_API } from "../const/const";
 
 export const useImage = holiday => {
-  const [img, setImg] = useState(``);
+  const [img, setImg] = useState('');
 
   useEffect(() => {
     if (!holiday) return;
