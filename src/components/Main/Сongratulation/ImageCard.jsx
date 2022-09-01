@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import { imgContext } from "../../../context/imgContext";
+import { URI_API } from "../../../const/const";
 
 
-const ImageCard = (props) => {
+const ImageCard = () => {
   const img = useContext(imgContext);
   console.log(img);
   return (
-    <img src={props.img} alt="Фон открытки" width={840} height={520} />
+    <img src={`${URI_API}image/${img}`} alt="Фон открытки" width={840} height={520} />
   )
 };
 
