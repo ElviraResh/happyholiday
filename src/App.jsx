@@ -1,20 +1,21 @@
-import Footer from "./components/Footer/Footer"
-import Header from "./components/Header/Header";
+import { Route, Routes } from "react-router-dom";
+import EmptyCard from "./components/EmptyCard/EmptyCard";
+import Layout from "./components/Layout/Layout";
 import Main from "./components/Main/Main";
 
-const wrapper = {
-  display: 'flex',
-  flexDirection: 'column',
-  height: '100vh',
-};
+
 
 const App = () => {
   return (
-    <div style={wrapper}>
-        <Header />
-        <Main />
-        <Footer />
-    </div>
+
+    <Routes>
+      <Route path='/' element={<Layout />}>
+        <Route index element={<EmptyCard />} />
+        <Route path='main/:holiday' element={<Main />} />
+      </Route>
+      <Route path='singleCard/:idText/:idImg' element={<Main/>}/>
+    </Routes>
+
   );
 }
 
